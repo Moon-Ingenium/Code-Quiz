@@ -1,10 +1,10 @@
-var something = document.querySelector("container");
-var questionEl = document.querySelector("intial");
-var conentEl = document.querySelector("info");
-var bttnEl = document.querySelector("start-game");
-// total correcr variable for score? total++ correct answers/total-- will trigger time reduction
+var something = document.querySelector(".container");
+var questionEl = document.querySelector(".intial");
+var contentEl = document.querySelector(".info");
+var bttnEl = document.querySelector(".start-game");
 
-var countdownEl = document.querySelector("time-score");
+
+var countdownEl = document.querySelector(".timer-score");
 var time = "";
 var questionIndex = 0;
 var quiz = [
@@ -38,38 +38,53 @@ var quiz = [
     },
 
 ];
-// addeventlistener start on click
-// prev.addeventlistner("click" function(event){
-// event.stopPropagation();}); 
 
-// on click function
-// if we click the button timer begins and 1st question starts
 // what is my timer doing?
 bttnEl.addEventListener("click", function (event) {
-    if ()
-})
+    bttnEl.style.display = "none";
+    scoreCounter();
+    questionEl.textContent= quiz[0].question1;
+    contentEl.textContent ="";
+    var i =0;
+    for (i = 0; i< quiz[0].answers.length; i++){
+        var answerbtn = document.createElement("BUTTON");   
+        answerbtn.innerHTML = quiz[0].answers[i];      
+        contentEl.appendChild(answerbtn);
+        answerbtn.className ="answer-button";
+    }
+} );
 
+document.body.addEventListener("click", function(event){
+    var target = event.target
+if(target.classList.contains("answer-button")) {
+    
+}
+});
 
 
 function scoreCounter() {
     var time = 100;
-    var score = setInterval(function () {
+    var intervalID = setInterval(function () {
         time--;
+        countdownEl.textContent = "Time: " + time;
         if (time === 0) {
             // clearInterval(andrew); function shows highscore
             countdownEl.textContent = "";
             tallyScore();
-            clearInterval(time);
-        }, 1000)
-}
+            clearInterval(intervalID);
+        }
+        
+    }, 1000)
 };
+
+
 function tallyScore (){
-    if()    {
+//     if()    {
 
-    }
-    else{
+//     }
+//     else{
 
-    }
+//     }
 
 }
 
@@ -79,7 +94,7 @@ function tallyScore (){
 
 
 
-// var questionDisplay = document.querySelector("start-game");
+
 // questionDisplay.innerHTML = (quiz[questionIndex].question1);
 // console.log(questions[0].question);
 
