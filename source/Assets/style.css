@@ -1,0 +1,18 @@
+
+
+.container {
+    text-align: center;
+    margin: 15px;
+}
+
+.answer-button{
+    background-color: rgb(0, 128, 79);
+    align-content: center;
+
+
+}
+
+.intials-score{
+    display: none;
+    text-align: center;
+}

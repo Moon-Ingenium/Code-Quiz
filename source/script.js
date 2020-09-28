@@ -3,8 +3,9 @@ var questionEl = document.querySelector(".intial");
 var contentEl = document.querySelector(".info");
 var bttnEl = document.querySelector(".start-game");
 var verifyEl = document.querySelector(".answer-verify");
-
+var endGame = document.querySelector(".intials-score");
 var countdownEl = document.querySelector(".timer-score");
+
 var time = 100;
 var quizIndex =0;
 var quiz = [
@@ -57,6 +58,7 @@ bttnEl.addEventListener("click", function (event) {
             answerbtn.setAttribute("data-correct", true);
 
         }
+    
     }
 
 } );
@@ -102,24 +104,32 @@ function scoreCounter() {
     var intervalID = setInterval(function () {
         time--;
         countdownEl.textContent = "Time: " + time;
-        if (time === 0) {
-            // clearInterval(andrew); function shows highscore
-            countdownEl.textContent = "";
-            tallyScore();
+        if (time === 0 || quizIndex >= 4) {
+            // clearInterval(andrew); function shows highscore this needs to say or if questions are over 
+            countdownEl.textContent = "Score : " + time;
             clearInterval(intervalID);
+            tallyScore();
+            
         }
         
     }, 1000)
 };
-
+//    
+// stop the time and display score 
 
 function tallyScore (){
-//     if()    {
+   if(quizIndex>=4)
+        {
+            countdownEl.textContent ="";
+            verifyEl.textContent ="";
+            questionEl.textContent ="All Done!"
+            contentEl.textContent ="Your Score is " + time;
+            endGame.style.display ="block";
 
-//     }
-//     else{
+            
+        
 
-//     }
+  }
 
 }
 

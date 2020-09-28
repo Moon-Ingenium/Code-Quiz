@@ -5,21 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel ="stylesheet" href="./Assets/style.css"/>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
         integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    <style>
-        .container {
-            text-align: center;
-            margin: 0 auto;
-        }
-    </style>
+
 </head>
 
 <body>
-    <div class="nav">
-        <div class="row"></div>
-        <div class="high-scores">High Score</div>
-        <div class="timer-score">Time: 100</div>
+    <div class="highscore"></div>
+    <div class="timer-score">Time: 100</div>
     </div>
     <div class="container">
         <h1 class="intial">Welcome to this quiz!</h1>
@@ -27,8 +21,14 @@
             incorrect, a time/score penalty of ten seconds will be deducted.</p>
         <button class="start-game">Start Quiz</button>
 
+
     </div>
     <div class="answer-verify"></div>
+    <form class="intials-score">
+        <label for="fname">Enter Initials</label><br>
+        <input type="text" id="name" name="fname">
+        <input type="submit" value="Submit">
+    </form>
 
     </div>
 
