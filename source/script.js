@@ -105,8 +105,7 @@ function scoreCounter() {
         time--;
         countdownEl.textContent = "Score: " + time;
         if (time === 0 || quizIndex >= 4) {
-            // clearInterval(andrew); function shows highscore this needs to say or if questions are over 
-            countdownEl.textContent = "Score : " + time;
+           countdownEl.textContent = "Score : " + time;
             clearInterval(intervalID);
             tallyScore();
             
@@ -114,7 +113,7 @@ function scoreCounter() {
         
     }, 1000)
 };
-//    
+ 
 // stop the time and display score 
 
 function tallyScore (){
@@ -125,23 +124,16 @@ function tallyScore (){
             questionEl.textContent ="All Done!"
             contentEl.textContent ="Your Score is " + time;
             endGame.style.display ="block";
-            // 
             
-
-            
-        
-
-  }
+        }
+        // Submit button grabbing intials and going to highscore page
   endGame.addEventListener("submit", function(event){
    var highScorePage= document.getElementById("name").value;
-//    localStorage.setItem("test", "test")
-    
-    // renderTodos();
-    // localStorage.setItem("name", JSON.stringify(value);
-    // if(event) {
+    localStorage.setItem("name", JSON.stringify(value));
 
-    // }
-    // 
+    
+    
+    
 })
  
 }
