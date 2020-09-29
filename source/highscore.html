@@ -21,7 +21,18 @@
     <script>
         var clear = $("#clear");
         var display = $(".scores");
-        display.text = JSON.parse(localStorage.getItem("name" + time));
+        // display.text = JSON.parse(localStorage.getItem("name" + time));
+        
+        var localStorageItem = JSON.parse(localStorage.getItem("score"));
+
+        localStorageItem.forEach(entry => {
+            display.append(entry.name + ": " + entry.score);
+            display.append("<br>");
+        })
+
+        console.log(localStorageItem);
+        //display.append(localStorageItem.name + ": "+ localStorageItem.score);
+
 
         clear.on("click", function()
         {

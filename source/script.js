@@ -77,9 +77,15 @@ document.body.addEventListener("click", function(event){
             verifyEl.textContent ="Wrong!"
             time= time-10;
         }
+        
         quizIndex++;
+        if (quizIndex < quiz.length) {
+            contentEl.textContent ="";
     questionEl.textContent= quiz[quizIndex].question;
-    contentEl.textContent ="";
+    console.log(quizIndex >= quiz.length);
+    console.log(quiz[quizIndex]);
+    
+
     // creating answers as buttons
     var i =0;
     for (i = 0; i< quiz[0].answers.length; i++){
@@ -95,7 +101,7 @@ document.body.addEventListener("click", function(event){
     }
     }
 
-    
+}
 });
 
 
@@ -107,7 +113,7 @@ function scoreCounter() {
         if (time === 0 || quizIndex >= 4) {
            countdownEl.textContent = "Score : " + time;
             clearInterval(intervalID);
-            tallyScore();
+            tallyScore(time);
             
         }
         
@@ -116,7 +122,7 @@ function scoreCounter() {
  
 // stop the time and display score 
 
-function tallyScore (){
+function tallyScore (time){
    if(quizIndex>=4)
         {
             countdownEl.textContent ="";
@@ -127,11 +133,29 @@ function tallyScore (){
             
         }
         // Submit button grabbing intials and going to highscore page
-  endGame.addEventListener("submit", function(event){
-   var highScorePage= document.getElementById("name").value;
-    localStorage.setItem("name", JSON.stringify(value));
 
+  endGame.addEventListener("submit", function(event){
+      var scoreEntry = {
+          name: document.getElementById("name").value,
+          score: time
+      };
+   
     
+      var scoreLists = JSON.parse(localStorage.getItem("score"));
+      // just check to see if the user has an item in localStorage called "score"
+      // if so, we'll use it like we're doing already
+      // if not, let's create that item in their localStorage
+      if (scoreLists !== null)
+      {
+    scoreLists.unshift(scoreEntry);
+    console.log(scoreLists);
+    localStorage.setItem("score", JSON.stringify(scoreLists));
+    }
+    else{
+            var newScoreList = [];
+            newScoreList.unshift(scoreEntry);
+            localStorage.setItem("score", JSON.stringify(newScoreList));
+    }
     
     
 })
