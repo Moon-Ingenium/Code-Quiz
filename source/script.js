@@ -125,12 +125,21 @@ function tallyScore (){
             questionEl.textContent ="All Done!"
             contentEl.textContent ="Your Score is " + time;
             endGame.style.display ="block";
+            // 
+            
 
             
         
 
   }
-
+  endGame.addEventListener("submit", function(event){
+   var highScorePage= document.getElementById("name").value;
+   
+    
+    // renderTodos();
+    // localStorage.setItem("todos", JSON.stringify(todos));
+})
+ 
 }
 
 
