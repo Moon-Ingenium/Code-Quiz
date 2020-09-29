@@ -103,7 +103,7 @@ function scoreCounter() {
     
     var intervalID = setInterval(function () {
         time--;
-        countdownEl.textContent = "Time: " + time;
+        countdownEl.textContent = "Score: " + time;
         if (time === 0 || quizIndex >= 4) {
             // clearInterval(andrew); function shows highscore this needs to say or if questions are over 
             countdownEl.textContent = "Score : " + time;
@@ -134,10 +134,14 @@ function tallyScore (){
   }
   endGame.addEventListener("submit", function(event){
    var highScorePage= document.getElementById("name").value;
-   
+//    localStorage.setItem("test", "test")
     
     // renderTodos();
-    // localStorage.setItem("todos", JSON.stringify(todos));
+    // localStorage.setItem("name", JSON.stringify(value);
+    // if(event) {
+
+    // }
+    // 
 })
  
 }
