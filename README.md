@@ -19,6 +19,7 @@ Code Quiz:
 
 Links:
 
-![code quiz](./Assets/game.gif)
+![](source/Assets/game.gif)
+
 git hub: https://github.com/Moon-Ingenium/Code-Quiz.git
-Url: 
+Url: https://moon-ingenium.github.io/Code-Quiz/
