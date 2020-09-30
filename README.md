@@ -19,6 +19,6 @@ Code Quiz:
 
 Links:
 
-![code quiz](./Assets/04-web-apis-homework-demo.gif)
+![code quiz](./Assets/game.gif)
 git hub: https://github.com/Moon-Ingenium/Code-Quiz.git
 Url: 
